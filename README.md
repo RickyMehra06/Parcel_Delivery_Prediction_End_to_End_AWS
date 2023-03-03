@@ -2,9 +2,6 @@
 
 ![](https://github.com/RickyMehra06/Parcel_Delivery_Prediction_End_to_End_AWS/blob/main/media/Parcel_Delivery_GIF.gif)
 
-The repository consists of files required for end to end implementation and deployment of Parcel Delivery Prediction web application using machine learning created with Flask and deployed on the AWS platform for both Instance prediction and Batch file prediction.
-
-
 ## Problem Statement:
 
 Amazon US facilitates Indian sellers to sell their products in the US marketplace through their seller-fulfilled channels using a program called Amazon Global Selling. An Amazon seller in India is selling his books at Amazon's US marketplace.
