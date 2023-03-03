@@ -1,6 +1,6 @@
 # Parcel Delivery Prediction:
 
-![](https://github.com/RickyMehra29/Flight_Fare_Prediction_End_to_End_AWS/blob/main/Docs/FFP_GIF.gif)
+![](https://github.com/RickyMehra06/Parcel_Delivery_Prediction_End_to_End_AWS/blob/main/media/Parcel_Delivery_GIF.gif)
 
 The repository consists of files required for end to end implementation and deployment of Parcel Delivery Prediction web application using machine learning created with Flask and deployed on the AWS platform for both Instance prediction and Batch file prediction.
 
@@ -76,7 +76,7 @@ In order to reduce the order-cancellation rate, the seller needs a parcel delive
 * For instance prediction, user can provide required inputs on the HTML webpage and on click of the predict button to get the connection date and delivery date.
 * For batch prediction, user can provide the input file path in .xlsx format and output file directory to get the predicted batch file.
 
-![ML_Dev_Steps](https://github.com/RickyMehra06/Parcel_Delivery_Prediction_End_to_End_with_AWS/blob/main/Parcel_delivery_Architecture.jpg)
+![ML_Dev_Steps](https://github.com/RickyMehra06/Parcel_Delivery_Prediction_End_to_End_AWS/blob/main/media/Parcel_delivery_Architecture.jpg)
 
 
 ### Step 1 - Install the requirements
