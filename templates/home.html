@@ -1,0 +1,156 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>jQuery Show Different HTML Form on Radio Button Selection</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+	<!-- BootStrap -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+	integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+	<!-- css -->
+	<link rel="stylesheet" href="static/css/styles.css">
+
+	<style>
+	.myDiv{display:none;}  
+	</style>
+
+	<script>
+		$(document).ready(function(){
+			$('input[type="radio"]').click(function(){
+				var demovalue = $(this).val(); 
+				$("div.myDiv").hide();
+				$("#show"+demovalue).show();
+			});
+		});
+	</script>
+</head>
+
+<body style="background-color:#e4e5e6";>
+	<div class="login">
+	   	<h1 style="background-color:#009FFD" >
+			<strong>Parcel Delivery Prediction</strong>
+		</h1>
+	 	<style> h1 {text-align: center; } </style> <br><br>
+
+<input type="radio" name="demo" value="One"  /> <label style="font-size: 24px;"><strong> Instance Prediction </strong></label>
+<input type="radio" name="demo" value="Two"  /> <label style="font-size: 24px;"><strong> Batch File Prediction </strong></label>
+		<br><br>
+
+		<div id="showOne" class="myDiv">			
+			<!-- Main Input For Receiving Query to our ML -->
+			<table>
+			<form action="{{ url_for('predict_api')}}"method="post">						
+				<tr>
+					<td>
+						<label style="font-weight: bold; ">Order Date: </label>								
+					</td>
+					<td><input type="date" name="Order Date" placeholder="Order Date" required="required"/>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<label style="font-weight: bold;">Quantity Purchased:</label>
+					</td>
+					<td><input type="number" max="3" min="1" name="Quantity Purchased" placeholder="1" required="required" />
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<label style="font-weight: bold;">Parcel Weight:</label>
+					</td>
+					<td><select id="Parcel Weight" name="Parcel Weight" placeholder="Weights">
+						<option value=1>.Upto 500 grams</option>
+						<option value=2>501-1000 grams</option>
+						<option value=3>1001-1500 grams</option>
+						<option value=4>1501-2000 grams</option>
+						<option value=5>2001-2500 grams</option>
+						<option value=6>more than 2500 grams</option>
+						</select>
+					</td>
+				</tr>
+
+				<tr>
+					<td>
+						<label style="font-weight: bold;">Postal code:</label>
+					</td>
+					<td><input class="zipcode" type="text" name="Postal code" placeholder="5 Digits" pattern="\d{5,5}(-\d{4,4})?">
+					</td>
+				</tr>
+			</table><br>				
+
+			<h7 style="background-color:#fdc200" >Google Maps API is used to fetch below features details: </h1>
+				<ul>
+					<li>Travel Distance</li>
+					<li>Travel Time</li>
+				</ul>
+		
+			<h7 style="background-color:#fdc200" >Web scarpping is used to fetch below weather's features details: </h1>
+			<ul>
+				<li>Temperature</li>
+				<li>Prepcipitation</li>
+				<li>Humidity</li>
+				<li>Wind</li>
+				<li>Description</li>
+			</ul>      
+					
+			<button style="font-size:25px" type="submit" class="btn btn-primary btn-block btn-large"> <strong>Submit to predict</strong></button>
+			</form>
+			<br>			
+		</div>
+
+		<div id="showTwo" class="myDiv">
+			<!-- Main Input For Receiving Query to our ML -->
+			<table>
+			<form action="{{ url_for('predict_api')}}"method="post">
+			<tr>
+				<td>
+					<label><strong>Input batch file path:</strong></label>
+				</td>
+				<td style="padding-left:15px;"> 
+					<!--input type="file" name="files_path" accept=".xlsx" webkitdirectory="true" /-->
+					<input type="text" name="Input_file_path" placeholder="Batch prediction Input file" required="required">
+				</td>
+			</tr>
+
+			<tr>
+				<td>
+					<label><strong>Output file directory:</strong></label>
+				</td>
+				<td style="padding-left:15px;"> 
+					<!--input type="file" name="files_path" accept=".xlsx" webkitdirectory="true" /-->
+					<input type="text" name="Output_file_dir" placeholder="Batch prediction Output dir" required="required">
+				</td>
+			</tr>
+
+			
+			</table><br>
+			<h7 style="background-color:#fdc200" >Google Maps API is used to fetch below features details: </h1>
+				<ul>
+					<li>Travel Distance</li>
+					<li>Travel Time</li>
+				</ul>
+		
+			<h7 style="background-color:#fdc200" >Web scarpping is used to fetch below weather's features details: </h1>
+			<ul>
+				<li>Temperature</li>
+				<li>Prepcipitation</li>
+				<li>Humidity</li>
+				<li>Wind</li>
+				<li>Description</li>
+			</ul>      
+					
+			<button style="font-size:25px" type="submit" class="btn btn-primary btn-block btn-large"> <strong>Submit to predict</strong></button>
+			</form>
+			<br>			
+		</div>
+
+	<h4>{{output_text}}</h4>
+	<style> h4 {background-color:#fdc200; text-align: center} </style>
+
+		<br>
+
+</body>
+</html>              
