@@ -82,6 +82,7 @@ In order to reduce the order-cancellation rate, the seller needs a parcel delive
 pip install -r requirements.txt
 ```
 
+
 ### Step 2 - To Run .py files for prediction
 
 ```bash
