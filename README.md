@@ -17,10 +17,14 @@ In order to reduce the order-cancellation rate, the seller needs a parcel delive
 ## Challenges and other objectives
 * Extensive feature engineering is required as dataset has limited relevant features to develope the model.
 * Web scrapping is used to extract weather condition.
-* Google Maps API is used to find out the Latitude and Longitude coordinates.
-* Google Maps API is used to find out the travel distance and time required to deliver the parcel.
-* The same webpage can be used for both Instance prediction and Batch file prediction.
+* Google Maps API - Geocode is used to find out the Latitude and Longitude coordinates.
+* Google Maps API - Distance_matrix is used to find out the travel distance and time required to deliver the parcel.
+* The same Flask API can be used for both Instance prediction and Batch file prediction.
 * The model will evaluate the currently trained model with the previously trained model. If the currently trained model is better then saving the model and transformer objects for the future prediction.
+
+## Solution Provided:
+* Reduced the **order-cancellation rate from 15% to 4%** for Amazon global seller
+* The same Flask API can be used for both Instance prediction and Batch file prediction.
 
 ## Features Details:
 
